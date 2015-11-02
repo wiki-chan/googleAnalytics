@@ -1,0 +1,43 @@
+{
+	"name": "Google Analytics Integration",
+	"version": "3.0.1",
+	"author": [
+		"Tim Laqua",
+		"[https://www.mediawiki.org/wiki/User:DavisNT Davis Mosenkovs]"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Google_Analytics_Integration",
+	"descriptionmsg": "googleanalytics-desc",
+	"type": "other",
+	"MessagesDirs": {
+		"googleAnalytics": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"googleAnalytics": "googleAnalytics.i18n.php"
+	},
+	"AutoloadClasses": {
+		"GoogleAnalyticsHooks": "googleAnalytics.hooks.php"
+	},
+	"Hooks": {
+		"SkinAfterBottomScripts": [
+			"GoogleAnalyticsHooks::onSkinAfterBottomScripts"
+		],
+		"UnitTestsList": [
+			"GoogleAnalyticsHooks::onUnitTestsList"
+		]
+	},
+	"config": {
+		"GoogleAnalyticsAccount": "",
+		"GoogleAnalyticsAnonymizeIP": true,
+		"GoogleAnalyticsOtherCode": "",
+		"GoogleAnalyticsIgnoreNsIDs": [],
+		"GoogleAnalyticsIgnorePages": [],
+		"GoogleAnalyticsIgnoreSpecials": [
+			"Userlogin",
+			"Userlogout",
+			"Preferences",
+			"ChangePassword"
+		]
+	}
+}
